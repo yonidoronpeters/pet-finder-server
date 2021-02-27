@@ -4,7 +4,6 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
   const options = new DocumentBuilder()
     .setTitle('Subscription API')
     .setDescription('An API for creating and managing pet adoption notification subscriptions')
@@ -13,6 +12,7 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 
+  app.enableCors();
   await app.listen(3008);
 }
 bootstrap();

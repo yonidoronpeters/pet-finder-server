@@ -15,8 +15,8 @@ describe('SubscriptionController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return empty array of subscriptions', () => {
+      expect(appController.getAll()).toEqual([]);
     });
   });
 });
